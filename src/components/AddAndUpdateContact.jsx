@@ -40,9 +40,9 @@ const AddAndUpdateContact = ({ isOpen, onClose, isUpdate, cont }) => {
         <Formik
         validationSchema={contactsSchemaValidation}
           initialValues={
-            isUpdate
-              ? { name: cont.name, email: cont.email }
-              : { name: "", email: "" }
+            // isUpdate
+            //   ? { name: cont.name, email: cont.email }:
+               { name: "", email: "" }
           }
           onSubmit={(values) => {
             isUpdate ? updateContact(values,contact.id) : addContact(values);
