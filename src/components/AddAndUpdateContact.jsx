@@ -4,7 +4,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 
 import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
 import { db } from "../config/firebase";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
 import * as Yup from "yup";
 
@@ -14,12 +14,12 @@ const contactsSchemaValidation = Yup.object().shape({
 
 })
 
-const AddAndUpdateContact = ({ isOpen, onClose, isUpdate, contact }) => {
+const AddAndUpdateContact = ({ isOpen, onClose, isUpdate, cont }) => {
   const addContact = async (contact) => {
     try {
       const contactRef = collection(db, "contacts");
       await addDoc(contactRef, contact);
-      toast.success("Contact Added Successfully")
+      // toast.success("Contact Added Successfully")
     } catch (error) {
       console.log(error);
     }
@@ -28,7 +28,7 @@ const AddAndUpdateContact = ({ isOpen, onClose, isUpdate, contact }) => {
     try {
       const contactRef = doc(db, "contacts", id);
       await updateDoc(contactRef, contact);
-      toast.success("Contact Update Successfully")
+      // toast.success("Contact Update Successfully")
     } catch (error) {
       console.log(error);
     }
@@ -41,7 +41,7 @@ const AddAndUpdateContact = ({ isOpen, onClose, isUpdate, contact }) => {
         validationSchema={contactsSchemaValidation}
           initialValues={
             isUpdate
-              ? { name: contact.name, email: contact.email }
+              ? { name: cont.name, email: cont.email }
               : { name: "", email: "" }
           }
           onSubmit={(values) => {

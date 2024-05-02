@@ -9,8 +9,8 @@ import Modal from "./components/Modal";
 import AddAndUpdateContact from "./components/AddAndUpdateContact";
 import useDisclouse from "./hooks/useDisclouse";
 
-import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer, toast } from 'react-toastify';
+  // import 'react-toastify/dist/ReactToastify.css';
 import NotFoundContact from "./components/NotFoundContact";
 
 const App = () => {
@@ -105,7 +105,7 @@ const App = () => {
         </div>
       </div>
         <AddAndUpdateContact isOpen={isOpen} onClose={onClose} />
-        <ToastContainer position="bottom-center" />
+        {/* <ToastContainer position="bottom-center" /> */}
       {/* {isOpen && <div>True</div> || <div>Flase</div> } */}
 
       
