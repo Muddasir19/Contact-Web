@@ -6,13 +6,13 @@ import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
 import { db } from "../config/firebase";
 // import { toast } from "react-toastify";
 
-import * as Yup from "yup";
+// import * as Yup from "yup";
 
-const contactsSchemaValidation = Yup.object().shape({
-    name:Yup.string().required("Name is Required"),
-    email:Yup.string().email("Invalid Email").required("Email is Required"),
+// const contactsSchemaValidation = Yup.object().shape({
+//     name:Yup.string().required("Name is Required"),
+//     email:Yup.string().email("Invalid Email").required("Email is Required"),
 
-})
+// })
 
 const AddAndUpdateContact = ({ isOpen, onClose, isUpdate, cont }) => {
   const addContact = async (contact) => {
@@ -38,7 +38,7 @@ const AddAndUpdateContact = ({ isOpen, onClose, isUpdate, cont }) => {
     <div>
       <Modal isOpen={isOpen} onClose={onClose}>
         <Formik
-        validationSchema={contactsSchemaValidation}
+        // validationSchema={contactsSchemaValidation}
           initialValues={
             // isUpdate
             //   ? { name: cont.name, email: cont.email }:
