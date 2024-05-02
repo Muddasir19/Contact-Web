@@ -14,7 +14,7 @@ import { db } from "../config/firebase";
 
 // })
 
-const AddAndUpdateContact = ({ isOpen, onClose, isUpdate, cont }) => {
+const AddAndUpdateContact = ({ isOpen, onClose, isUpdate, contact }) => {
   const addContact = async (contact) => {
     try {
       const contactRef = collection(db, "contacts");
@@ -40,8 +40,8 @@ const AddAndUpdateContact = ({ isOpen, onClose, isUpdate, cont }) => {
         <Formik
         // validationSchema={contactsSchemaValidation}
           initialValues={
-            // isUpdate
-            //   ? { name: cont.name, email: cont.email }:
+            isUpdate
+              ? { name: contact.name, email: contact.email }:
                { name: "", email: "" }
           }
           onSubmit={(values) => {
